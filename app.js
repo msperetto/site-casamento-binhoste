@@ -128,3 +128,24 @@ window.addEventListener('scroll', () => {
         header.classList.remove('header-scrolled');
     }
 });
+
+// 5. REVEAL ON SCROLL
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+};
+
+const revealOptions = {
+    threshold: 0.15
+};
+
+const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+revealElements.forEach(el => {
+    revealObserver.observe(el);
+});

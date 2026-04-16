@@ -102,7 +102,19 @@ h1, h2, h3 {
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+#hospedagem {
+    background-color: var(--soft-blue);
 }
 
 /* HERO */
@@ -176,11 +188,13 @@ section {
 }
 
 .count-item label {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
-    color: var(--accent-color);
+    letter-spacing: 2px;
+    margin-top: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    opacity: 0.8;
 }
 
 .count-separator {
@@ -329,6 +343,28 @@ input, select, textarea {
 }
 
 /* ANIMATIONS */
+/* REVEAL ON SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MICRO-INTERACTIONS */
+.timeline-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
