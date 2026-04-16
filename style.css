@@ -1,0 +1,367 @@
+/* 
+   Design System for Stephanie & Fabio's Wedding 
+   Bariloche 2026 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-color: #2d3436; /* Charcoal */
+    --accent-color: #b2bec3;  /* Silver */
+    --snow-white: #ffffff;
+    --soft-blue: #f0f4f8;
+    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--primary-color);
+    background-color: var(--soft-blue);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+}
+
+/* HEADER */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-monogram {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+#main-header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+#main-header nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#main-header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+#main-header.header-scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* HERO */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('resources/bariloche_hero.png') center/cover no-repeat fixed;
+    color: var(--snow-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    padding: 60px;
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.monogram {
+    font-size: 3rem;
+    font-family: var(--font-serif);
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.couple-names {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.wedding-date {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* MINI COUNTDOWN (INTEGRATED) */
+.countdown-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.count-item {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+}
+
+.count-item span {
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.count-item label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: var(--accent-color);
+}
+
+.count-separator {
+    font-size: 1.2rem;
+    font-family: var(--font-serif);
+    color: var(--accent-color);
+    margin-bottom: 12px;
+}
+
+/* SCHEDULE / TIMELINE */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: -5px;
+    background-color: var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left { left: 0; text-align: right; }
+.right { left: 50%; }
+
+.right::after { left: -5px; }
+
+.timeline-content {
+    padding: 20px;
+    background-color: var(--snow-white);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.day-badge {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* CARDS FOR ACCOMMODATION */
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.hotel-card {
+    background: var(--snow-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.hotel-card:hover { transform: translateY(-10px); }
+
+.hotel-info { padding: 30px; }
+.hotel-info h3 { margin-bottom: 15px; }
+
+/* RSVP FORM */
+#rsvp {
+    background: linear-gradient(rgba(240, 244, 248, 0.9), rgba(240, 244, 248, 0.9)), url('resources/bariloche_hero.png') center/cover no-repeat fixed;
+}
+
+.rsvp-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--glass-background);
+    backdrop-filter: blur(15px);
+    padding: 60px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.form-group { margin-bottom: 25px; }
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    background: var(--snow-white);
+    font-family: inherit;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--primary-color);
+    color: var(--snow-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.btn:hover { background-color: #000; }
+
+/* SNOW EFFECT CANVAS */
+#snow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item::after { left: 26px; }
+    .left { text-align: left; }
+    .right { left: 0%; }
+    
+    .couple-names { font-size: 2.5rem; }
+    .hero-content { padding: 30px; }
+    .countdown-container { gap: 15px; }
+
+    #main-header nav ul {
+        gap: 15px;
+    }
+    
+    #main-header nav ul li a {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .header-monogram {
+        display: none; /* Hide monogram on small mobile to save space */
+    }
+}

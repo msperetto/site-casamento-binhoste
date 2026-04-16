@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephanie & Fabio | Bariloche 2026</title>
+    <meta name="description" content="Site do casamento de Stephanie e Fabio em Bariloche, Argentina. Confira a programação e confirme sua presença.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <div class="header-monogram">S|F</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#programacao">Programação</a></li>
+                    <li><a href="#hospedagem">Hospedagem</a></li>
+                    <li><a href="#rsvp">Confirmar Presença</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <canvas id="snow-canvas"></canvas>
+        <div class="hero-content">
+            <div class="monogram">S|F</div>
+            <h1 class="couple-names">Stephanie & Fabio</h1>
+            <p class="wedding-date">29 de Agosto de 2026 • Bariloche</p>
+            
+            <div class="countdown-mini" id="countdown">
+                <div class="count-item">
+                    <span id="days">00</span>
+                    <label>dias</label>
+                </div>
+                <div class="count-separator">:</div>
+                <div class="count-item">
+                    <span id="hours">00</span>
+                    <label>horas</label>
+                </div>
+                <div class="count-separator">:</div>
+                <div class="count-item">
+                    <span id="minutes">00</span>
+                    <label>min</label>
+                </div>
+                <div class="count-separator">:</div>
+                <div class="count-item">
+                    <span id="seconds">00</span>
+                    <label>seg</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programacao">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Programação</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="day-badge">22 DE AGOSTO (SÁB)</span>
+                        <h3>Chegada & Neve</h3>
+                        <p>Para os snowboarders e skiers! Todos estão convidados a chegar dia 22 para curtir a montanha com a gente.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="day-badge">22 - 27 DE AGOSTO</span>
+                        <h3>Atividades na Montanha</h3>
+                        <p>Teremos atividades organizadas na montanha ao longo de toda a semana.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="day-badge">28 DE AGOSTO (SEX)</span>
+                        <h3>Pré-Wedding</h3>
+                        <p>Atividades especiais com todos os convidados para aquecer antes do grande dia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="day-badge">29 DE AGOSTO (SÁB)</span>
+                        <h3>O Casamento</h3>
+                        <p>📍 El Casco Art Hotel. O momento mais esperado de nossa jornada sob a neve de Bariloche.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="day-badge">30 DE AGOSTO (DOM)</span>
+                        <h3>Brunch de Encerramento</h3>
+                        <p>Um café da manhã tardio para nos despedirmos e celebrarmos os primeiros momentos como recém-casados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hospedagem" style="background-color: var(--soft-blue);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Hospedagem</h2>
+            
+            <div class="hotel-grid">
+                <div class="hotel-card">
+                    <div class="hotel-info">
+                        <h3>22 a 28 de Agosto</h3>
+                        <p><strong>Organização Individual</strong></p>
+                        <p>Cada grupo deve se organizar entre si e escolher seu próprio hotel ou airbnb em Bariloche para a semana da montanha.</p>
+                    </div>
+                </div>
+                <div class="hotel-card" style="border: 2px solid var(--accent-color);">
+                    <div class="hotel-info">
+                        <h3>28 a 30 de Agosto</h3>
+                        <p><strong>📍 El Casco Art Hotel</strong></p>
+                        <p>Nesta data, todos os convidados ficarão no hotel onde acontecerá o casamento para aproveitarmos juntos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp">
+        <div class="container">
+            <div class="rsvp-form-container">
+                <h2 style="text-align: center; margin-bottom: 30px;">Confirmação de Presença</h2>
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Como no convite" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Número de Convidados (incluindo você)</label>
+                        <select id="guests" name="guests" required>
+                            <option value="1">1 Pessoa</option>
+                            <option value="2">2 Pessoas</option>
+                            <option value="3">3 Pessoas</option>
+                            <option value="4">4 Pessoas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Alguma observação? (ex: alergias alimentares)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Confirmar Presença</button>
+                    <p id="form-status" style="margin-top: 20px; text-align: center; display: none;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 0; text-align: center; background-color: var(--snow-white); border-top: 1px solid var(--accent-color);">
+        <div class="monogram" style="font-size: 1.5rem; letter-spacing: 8px;">S|F</div>
+        <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-top: 20px;">Bariloche 2026 • Stephanie & Fabio</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
